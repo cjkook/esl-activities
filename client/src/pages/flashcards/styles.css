@@ -1,0 +1,34 @@
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-row-gap: 5px;
+  grid-column-gap: 5px;
+  grid-auto-rows: max-content;
+}
+
+.card {
+  width: fit-content;
+  transform: perspective(1000px) rotateY(var(--rotate-y,0));
+  transform-style: preserve-3d;
+  cursor: pointer;
+  transition: 150ms;
+  box-shadow: 0 0 1px 1px rgba(140,140,140,0.15);
+}
+
+.card:hover {
+  box-shadow: 0 0 10px 5px rgba(140,140,140,0.25);
+}
+
+.card.flip {
+  --rotate-y: 180deg;
+}
+
+.carousel-indicators {
+  visibility: hidden; 
+}
+
+.carousel-control-next,
+.carousel-control-prev /*, .carousel-indicators */ {
+    filter: invert(100%);
+    position: absolute;
+}
